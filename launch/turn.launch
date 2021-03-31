@@ -1,0 +1,9 @@
+<launch>
+    <arg name="sys" default="false"/>
+    <group if="$(arg sys)">
+        <include file="$(find dbw_polaris_can)/launch/dbw.launch" />
+    </group>
+
+    <node name="turn_node" pkg="gps_test_code" type="turn_node" output="screen"/>
+
+</launch>
